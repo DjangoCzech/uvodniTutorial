@@ -23,5 +23,16 @@ public class TahovyBoj {
         System.out.printf("Nazivu: %s%n", bojovnik.jeZivy());
         System.out.printf("Zivot: %s%n", bojovnik.grafickyZivot());
 
+        //bojovnik.utoc(bojovnik);
+        //System.out.printf("Zivot po utoku: %s%n", bojovnik.grafickyZivot());
+
+        Bojovnik souper = new Bojovnik("Shadow", 60, 18, 15, kostka);
+        souper.utoc(bojovnik);
+        System.out.println(souper.vratPosledniZpravu());
+        System.out.println(bojovnik.vratPosledniZpravu());
+
+        System.out.printf("Zivot bojovnika %s: %s%n",bojovnik, bojovnik.grafickyZivot());
+
+
     }
 }

@@ -47,4 +47,32 @@ public class Bojovnik {
         grafickyZivot += "]";
         return grafickyZivot;
     }
+
+    public void branSe(int uder){
+        int zraneni = uder - (obrana + kostka.hod());
+        if(zraneni > 0){
+            zivot -= zraneni;
+            zprava = String.format("%s utrpel poskozeni %s hp", name, zraneni);
+            if (zivot<=0){
+                zivot = 0;
+                zprava += " a zemrel";
+            }
+        } else {
+            zprava = String.format("%s odrazil utok", name);
+        }
+        nastavZpravu(zprava);
+    }
+
+    public void utoc(Bojovnik souper){
+        int uder = utok + kostka.hod();
+        nastavZpravu(String.format("%s utoci s uderem za %s hp", name, uder));
+        souper.branSe(uder);
+    }
+
+    private void nastavZpravu(String zprava){
+        this.zprava = zprava;
+    }
+    public String vratPosledniZpravu(){
+        return zprava;
+    }
 }
