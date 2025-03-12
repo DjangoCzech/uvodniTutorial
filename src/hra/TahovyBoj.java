@@ -35,7 +35,8 @@ public class TahovyBoj {
 
         //zkousime boj
         Kostka kostka2 = new Kostka(10);
-        Bojovnik Gandalf = new Bojovnik("Gandalf", 100, 20, 20, kostka2);
+        //Bojovnik Gandalf = new Bojovnik("Gandalf", 100, 20, 20, kostka2);
+        Bojovnik Gandalf = new Mag("Gandalf", 60, 15, 12, kostka2, 30, 45);
         Bojovnik Balrog = new Bojovnik("Balrog", 60, 18, 15, kostka2);
         Arena arena = new Arena(Gandalf, Balrog, kostka2);
 

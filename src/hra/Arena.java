@@ -14,9 +14,23 @@ public class Arena {
     private void vykresli(){
         System.out.println("-------------- Aréna -------------- \n");
         System.out.println("Zdraví bojovníků: \n");
-        System.out.printf("%s %s%n", bojovnikA, bojovnikA.grafickyZivot());
-        System.out.printf("%s %s%n", bojovnikB, bojovnikB.grafickyZivot());
+        vypisBojovnika(bojovnikA);
+        System.out.println();
+        vypisBojovnika(bojovnikB);
+        System.out.println();
+        //System.out.printf("%s %s%n", bojovnikA, bojovnikA.grafickyZivot());
+        //System.out.printf("%s %s%n", bojovnikB, bojovnikB.grafickyZivot());
 
+    }
+
+    private void vypisBojovnika(Bojovnik bojovnik){
+        System.out.println(bojovnik);
+        System.out.print("Zivot: ");
+        System.out.println(bojovnik.grafickyZivot());
+        if (bojovnik instanceof Mag){
+            System.out.print("Mana ");
+            System.out.println(((Mag) bojovnik).grafickaMana());
+        }
     }
 
     private void vypisZpravu(String zprava) {

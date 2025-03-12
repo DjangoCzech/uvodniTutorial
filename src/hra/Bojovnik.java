@@ -1,12 +1,12 @@
 package hra;
 
 public class Bojovnik {
-    private String name;
-    private int zivot;
-    private int maximalniZivot;
-    private int utok;
-    private int obrana;
-    private Kostka kostka;
+    protected String name;
+    protected int zivot;
+    protected int maximalniZivot;
+    protected int utok;
+    protected int obrana;
+    protected Kostka kostka;
     private String zprava;
 
     public Bojovnik(String name, int zivot, int utok, int obrana, Kostka kostka) {
@@ -31,10 +31,31 @@ public class Bojovnik {
         }
     }
 
+//    public String grafickyZivot(){
+//        String grafickyZivot = "[";
+//        int celkem = 20;
+//        double pocetDilku = Math.round(((double) zivot / maximalniZivot) * celkem);
+//        if ((pocetDilku == 0) && (jeZivy())){
+//            pocetDilku = 1;
+//        }
+//        for (int i = 0; i < pocetDilku; i++) {
+//            grafickyZivot += "#";
+//        }
+//        for (int i = 0; i < celkem - pocetDilku; i++) {
+//            grafickyZivot += " ";
+//        }
+//        grafickyZivot += "]";
+//        return grafickyZivot;
+//    }
+
     public String grafickyZivot(){
+        return grafickyUkazatel(zivot, maximalniZivot);
+    }
+
+    protected String grafickyUkazatel(int aktualni, int maximalni){
         String grafickyZivot = "[";
         int celkem = 20;
-        double pocetDilku = Math.round(((double) zivot / maximalniZivot) * celkem);
+        double pocetDilku = Math.round(((double) aktualni / maximalni) * celkem);
         if ((pocetDilku == 0) && (jeZivy())){
             pocetDilku = 1;
         }
@@ -69,7 +90,7 @@ public class Bojovnik {
         souper.branSe(uder);
     }
 
-    private void nastavZpravu(String zprava){
+    protected void nastavZpravu(String zprava){
         this.zprava = zprava;
     }
     public String vratPosledniZpravu(){
