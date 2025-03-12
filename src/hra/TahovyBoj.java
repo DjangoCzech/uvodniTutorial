@@ -33,6 +33,17 @@ public class TahovyBoj {
 
         System.out.printf("Zivot bojovnika %s: %s%n",bojovnik, bojovnik.grafickyZivot());
 
+        //zkousime boj
+        Kostka kostka2 = new Kostka(10);
+        Bojovnik Gandalf = new Bojovnik("Gandalf", 100, 20, 20, kostka2);
+        Bojovnik Balrog = new Bojovnik("Balrog", 60, 18, 15, kostka2);
+        Arena arena = new Arena(Gandalf, Balrog, kostka2);
+
+        //zapas
+        arena.zapas();
+
+
+
 
     }
 }
